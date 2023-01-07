@@ -27,6 +27,7 @@ function Login({ setToken}) {
             password
         });
         setToken(token);
+        window.location.reload();
     }
 
 
