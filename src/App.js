@@ -1,11 +1,27 @@
-
+import React, {useState} from "react";
+import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Preferences from "./components/Preferences/Preferences";
+import Login from "./components/Login/Login";
 
 function App() {
+  const [token, setToken] = useState();
+
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
+
   return (
-    <div className="margin-left: 5%">
-      <h2>Crown Bank Limited</h2>
-      <p>We can do this guys, I appreciate y'all!!</p>
-    </div>
+    <div className="wrapper">
+      <h1>Application</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/preferences" element={<Preferences/>} />
+          <Route path="/dashboard" element={<Dashboard/>} />
+        </Routes>
+      </BrowserRouter>
+      </div>
   );
 }
 
