@@ -27,27 +27,38 @@ function Login({ setToken}) {
             password
         });
         setToken(token);
-        window.location.reload();
+        // redirect to dashboard
+        window.location.href = '/dashboard';
+
     }
 
 
     return (
-        <div className="login-wrapper">
-      <h1>Please Log In</h1>
-      <form onSubmit={handleSubmit}>
-      <label>
-        <p>Username</p>
-        <input type="text" onChange={e => setUserName(e.target.value)} />
-      </label>
-      <label>
-        <p>Password</p>
-        <input type="password" onChange={e => setPassword(e.target.value)} />
-      </label>
-      <div>
-        <button type="submit">Submit</button>
+<div className="bg-gradient-to-tr from-green-300 to-green-600 h-screen w-full flex justify-center items-center">
+    <div className="bg-green-600 w-full sm:w-1/2 md:w-9/12 lg:w-1/2 shadow-md flex flex-col md:flex-row items-center mx-5 sm:m-0 rounded">
+      <div className="w-full md:w-1/2 hidden md:flex flex-col justify-center items-center text-white">
+        <h1 className="text-3xl">Hello</h1>
+        <p className="text-5xl font-extrabold">Welcome!</p>
       </div>
-    </form>
+      <div className="bg-white w-full md:w-1/2 flex flex-col items-center py-32 px-8">
+        <h3 className="text-3xl font-bold text-green-600 mb-4">
+          LOGIN
+        </h3>
+        <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center">
+          <div className="mb-4">
+            <input type="text" placeholder="Username" className="w-full p-3 rounded border placeholder-gray-400 focus:outline-none focus:border-green-600" onChange={e => setUserName(e.target.value)}  />
+          </div>
+          <div className="mb-4">
+            <input type="password" placeholder="Password" className="w-full p-3 rounded border placeholder-gray-400 focus:outline-none focus:border-green-600" onChange={e => setPassword(e.target.value)}  />
+          </div>
+          <button type="submit" className="bg-green-600 font-bold text-white focus:outline-none rounded p-3">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
+  </div>
+
     );
 }
 

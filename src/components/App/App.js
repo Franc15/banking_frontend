@@ -24,8 +24,8 @@ function App() {
       <button onClick={logout}>Log out</button>
       <BrowserRouter>
         <Routes>
-          <Route path="/preferences" element={<Preferences/>} />
-          <Route path="/dashboard" element={<Dashboard/>} />
+          <Route path="/preferences" element={<Preferences />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
       </div>
