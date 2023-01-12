@@ -73,7 +73,23 @@ function Dashboard({user}) {
             </tr>
         </thead>
         <tbody>
-            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+            {accounts && accounts.map((account) => (
+                <tr key={account['id']} class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        {account['account_no']}
+                    </th>
+                    <td class="px-6 py-4">
+                        {account['type']}
+                    </td>
+                    <td class="px-6 py-4">
+                        {account['balance']}
+                    </td>
+                    <td class="px-6 py-4">
+                        <a href={`/transactions/${account['id']}`} class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                    </td>
+                </tr>
+            ))}
+            {/* <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     454342546547
                 </th>
@@ -86,7 +102,7 @@ function Dashboard({user}) {
                 <td class="px-6 py-4">
                     <a href="/preferences" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                 </td>
-            </tr>
+            </tr> */}
         </tbody>
     </table>
 </div>
