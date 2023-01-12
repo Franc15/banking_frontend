@@ -52,36 +52,45 @@ function Dashboard({user}) {
       <input class="focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm" type="text" aria-label="Filter accounts" placeholder="Filter accounts..." />
     </form>
   </header>
-  <ul class="bg-slate-50 p-4 sm:px-8 sm:pt-6 sm:pb-8 lg:p-4 xl:px-8 xl:pt-6 xl:pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 text-sm leading-6">
-    {accounts && accounts.map((account) => (
-        <li>
-        <div class="flex items-center justify-between">
-            <div class="flex items-center">
-                <div class="flex-shrink-0">
-                    <svg width="20" height="20" fill="currentColor" class="text-blue-500" aria-hidden="true">
 
-                        <path d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1Z" />
-                    </svg>
-                </div>
-                <div class="ml-4">
+  
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500">
+        <thead class="text-xs text-gray-700 uppercase bg-green-50">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Account Number
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Account Type
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Balance
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    454342546547
+                </th>
+                <td class="px-6 py-4">
+                    Savings
+                </td>
+                <td class="px-6 py-4">
+                    $2999
+                </td>
+                <td class="px-6 py-4">
+                    <a href="/preferences" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-                    <h6 class="text-slate
-                    -900 font-semibold">{account['type']}</h6>
-                    <p class="text-slate
-                    -600">000000000000</p>
-                </div>
-            </div>
-            <div class="text-right">
-                <p class="text-slate-900 font-semibold">$ {account['balance']}</p>
-
-                <p class="text-slate
-                -600 font-bold">Available balance</p>
-            </div>
-        </div>
-
-    </li>
-    )) }
-  </ul>
 </section>
 
     );
